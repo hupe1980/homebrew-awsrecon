@@ -5,13 +5,13 @@
 class Awsrecon < Formula
   desc "AWSrecon is a tool for reconnaissance AWS cloud environments"
   homepage "https://github.com/hupe1980/awsrecon"
-  version "0.0.4"
+  version "0.0.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.4/awsrecon_Darwin_x86_64.tar.gz"
-      sha256 "87e1f15a45489387de3084ba3166e90f22fd4a89a3dfb694028ff0696b1dea6b"
+      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.5/awsrecon_Darwin_x86_64.tar.gz"
+      sha256 "b02404838a8b4032ea9f75b5d27246b75200d403714792140e070f69d994d693"
 
       def install
         bin.install "awsrecon"
@@ -21,8 +21,8 @@ class Awsrecon < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.4/awsrecon_Darwin_arm64.tar.gz"
-      sha256 "6240df84b0acb7a5398f63d6159f4b366026450fb3339bfa1f5082d31eddaccd"
+      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.5/awsrecon_Darwin_arm64.tar.gz"
+      sha256 "51fa5267e0489716cfedeb146ea7b63cf829fa2268f7f25a62c38d4c0d33226b"
 
       def install
         bin.install "awsrecon"
@@ -34,20 +34,9 @@ class Awsrecon < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.4/awsrecon_Linux_arm64.tar.gz"
-      sha256 "e17da3df7e4af9ce7dd9805c17ab448eb53b6cc491dd43f6a353d66337092f16"
-
-      def install
-        bin.install "awsrecon"
-        bash_completion.install "completions/awsrecon.bash" => "awsrecon"
-        zsh_completion.install "completions/awsrecon.zsh" => "_awsrecon"
-        fish_completion.install "completions/awsrecon.fish"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.4/awsrecon_Linux_x86_64.tar.gz"
-      sha256 "05e08093c83cb02f3851c2affe0a997ab53da4ef25d209aa215956fb83f65c24"
+      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.5/awsrecon_Linux_x86_64.tar.gz"
+      sha256 "6263e5f0f6139e14fb22b0aa2f8e2c3f4cef2067d9ddcf82f1829a34065f5faf"
 
       def install
         bin.install "awsrecon"
@@ -57,8 +46,19 @@ class Awsrecon < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.4/awsrecon_Linux_armv6.tar.gz"
-      sha256 "a2bd5cc9c5233f8ebab686110b4f5528704de88f177de45945347401cd170a42"
+      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.5/awsrecon_Linux_armv6.tar.gz"
+      sha256 "e09efda9523c1d073ffc6348451b570c0e8df426b614caaafac9a1c6f00eb53f"
+
+      def install
+        bin.install "awsrecon"
+        bash_completion.install "completions/awsrecon.bash" => "awsrecon"
+        zsh_completion.install "completions/awsrecon.zsh" => "_awsrecon"
+        fish_completion.install "completions/awsrecon.fish"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hupe1980/awsrecon/releases/download/v0.0.5/awsrecon_Linux_arm64.tar.gz"
+      sha256 "a192c5262f7fef4df8ada3721aaa5b29a402d24c33c4ec8a78b838f4d1926a2e"
 
       def install
         bin.install "awsrecon"
